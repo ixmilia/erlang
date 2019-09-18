@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IxMilia.Erlang", "src\IxMilia.Erlang\IxMilia.Erlang.csproj", "{EA03DD91-EEA1-418E-B649-67E644CFF9A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IxMilia.Erlang.Test", "src\IxMilia.Erlang.Test\IxMilia.Erlang.Test.csproj", "{77078B6B-598D-44C2-BEB0-D78B003C0977}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA03DD91-EEA1-418E-B649-67E644CFF9A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA03DD91-EEA1-418E-B649-67E644CFF9A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA03DD91-EEA1-418E-B649-67E644CFF9A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA03DD91-EEA1-418E-B649-67E644CFF9A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77078B6B-598D-44C2-BEB0-D78B003C0977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77078B6B-598D-44C2-BEB0-D78B003C0977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77078B6B-598D-44C2-BEB0-D78B003C0977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77078B6B-598D-44C2-BEB0-D78B003C0977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CF8333C-DB33-4D86-B52B-322A5A1573AF}
+	EndGlobalSection
+EndGlobal
