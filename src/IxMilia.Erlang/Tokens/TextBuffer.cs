@@ -1,4 +1,4 @@
-﻿namespace IxMilia.Erlang
+﻿namespace IxMilia.Erlang.Tokens
 {
     public class TextBuffer
     {
