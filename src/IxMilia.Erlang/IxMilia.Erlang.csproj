@@ -7,6 +7,7 @@
     <Authors>IxMilia</Authors>
     <TargetFrameworks>netstandard1.1</TargetFrameworks>
     <AssemblyName>IxMilia.Erlang</AssemblyName>
+    <NoWarn>$(NoWarn);659</NoWarn>
     <PackageId>IxMilia.Erlang</PackageId>
     <PackageTags>Erlang ERL</PackageTags>
     <PackageProjectUrl>https://github.com/ixmilia/erlang</PackageProjectUrl>
