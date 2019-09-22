@@ -127,6 +127,11 @@ namespace IxMilia.Erlang
             return ErlangList.CloneWithTail((ErlangList)list, tail);
         }
 
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as ErlangValue);
+        }
+
         public bool Equals(ErlangValue other)
         {
             if (other is null)
@@ -529,6 +534,11 @@ namespace IxMilia.Erlang
                     return newTail;
                 return new ErlangList(list.Value, newTail);
             }
+        }
+
+        public static ErlangList FromItems(params ErlangValue[] items)
+        {
+            return new ErlangList(items);
         }
 
         public static bool IsEmptyList(ErlangValue item)
