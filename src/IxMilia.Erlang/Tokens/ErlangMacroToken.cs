@@ -18,7 +18,7 @@ namespace IxMilia.Erlang.Tokens
 
         private static bool IsMacroContinue(char c)
         {
-            return IsUpper(c) || IsLower(c) || IsUnderscore(c);
+            return IsUpper(c) || IsLower(c) || IsUnderscore(c) || IsDigit(c);
         }
 
         internal static ErlangMacroToken Lex(TextBuffer buffer)

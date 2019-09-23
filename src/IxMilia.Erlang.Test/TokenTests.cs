@@ -30,8 +30,10 @@ namespace IxMilia.Erlang.Test
             Verify("foo@bar", new ErlangAtomToken("foo@bar"));
             Verify("'an atom'", new ErlangAtomToken("'an atom'"));
             Verify("?MACRO", new ErlangMacroToken("?MACRO")); // macro
+            Verify("?MD5SZ", new ErlangMacroToken("?MD5SZ"));
             Verify("4.5", new ErlangNumberToken("4.5", 4.5)); // number
             Verify("$a", new ErlangNumberToken("$a", 97));
+            Verify("1.0e-10", new ErlangNumberToken("1.0e-10", 1.0e-10));
             Verify("=:=", new ErlangEqualsColonEqualsToken()); // operator
             Verify("<-", new ErlangLessMinusToken()); // punctuation
             Verify("\"foo bar\"", new ErlangStringToken("foo bar")); // string

@@ -119,6 +119,7 @@ namespace IxMilia.Erlang.Tokens
             sb.Append(buffer.Peek());
             buffer.Advance();
             bool seenHash = false;
+            bool seenE = false;
             bool seenDecimal = false;
             var last = default(char);
             while (buffer.TextRemains())
@@ -152,6 +153,33 @@ namespace IxMilia.Erlang.Tokens
                         break;
                     }
                 }
+                else if ((c == 'e' || c == 'E') && !seenHash)
+                {
+                    if (!seenE)
+                    {
+                        seenE = true;
+                        buffer.Advance();
+                        sb.Append(c);
+                    }
+                    else
+                    {
+                        // premature end of number
+                        break;
+                    }
+                }
+                else if (c == '+' || c == '-')
+                {
+                    if (seenE && (last == 'e' || last == 'E'))
+                    {
+                        buffer.Advance();
+                        sb.Append(c);
+                    }
+                    else
+                    {
+                        // possibly already saw sign
+                        break;
+                    }
+                }
                 else if (IsNumberContinue(c))
                 {
                     buffer.Advance();
@@ -166,6 +194,7 @@ namespace IxMilia.Erlang.Tokens
             }
 
             Debug.Assert(!(seenDecimal && seenHash)); // should not have seen both
+            Debug.Assert(!(seenE && seenHash)); // should not have seen both
             if (last == '.')
             {
                 // numbers can't end in a decimal point
@@ -181,7 +210,7 @@ namespace IxMilia.Erlang.Tokens
             if (!seenHash)
             {
                 // simple parsing
-                if (seenDecimal)
+                if (seenDecimal || seenE)
                     doubleValue = Convert.ToDouble(text);
                 else
                     bigValue = BigInteger.Parse(text);
